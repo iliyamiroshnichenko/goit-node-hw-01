@@ -3,7 +3,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const contactsPath = "";
+const contactsPath = path.relative("/contacts.js", "/db/contacts.json");
+console.log(contactsPath);
 
 // TODO: задокументировать каждую функцию
 function listContacts() {
