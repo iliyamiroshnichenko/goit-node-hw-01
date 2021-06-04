@@ -1,5 +1,6 @@
 /* eslint-disable semi */
 /* eslint-disable quotes */
+const { listContacts, getContactById } = require("./contacts");
 const { Command } = require("commander");
 const program = new Command();
 program
