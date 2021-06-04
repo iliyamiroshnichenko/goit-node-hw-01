@@ -2,6 +2,7 @@
 /* eslint-disable quotes */
 const fs = require("fs").promises;
 const path = require("path");
+const { uid } = require("uid");
 
 const contactsPath = path.resolve("./db/contacts.json");
 
@@ -40,6 +41,24 @@ async function removeContact(contactId) {
   }
 }
 
-listContacts();
+async function addContact(name, email, phone) {
+  const newContact = {
+    id: uid(),
+    name,
+    email,
+    phone,
+  };
+  try {
+    const data = await fs.readFile(contactsPath, "utf8");
+    const contacts = JSON.parse(data);
+    const updatedContacts = [...contacts, newContact];
+    await fs.writeFile(contactsPath, JSON.stringify(updatedContacts));
+    console.log(
+      `New contact with name ${name}, email ${email}, phone ${phone} was added`
+    );
+  } catch (e) {
+    console.error(e);
+  }
+}
 
-module.exports = { listContacts, getContactById };
+module.exports = { listContacts, getContactById, removeContact, addContact };
