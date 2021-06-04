@@ -1,26 +1,18 @@
 /* eslint-disable semi */
 /* eslint-disable quotes */
-const fs = require("fs");
+const fs = require("fs").promises;
 const path = require("path");
 
-const contactsPath = path.relative("/contacts.js", "/db/contacts.json");
+const contactsPath = path.resolve("./db/contacts.json");
 console.log(contactsPath);
 
-// TODO: задокументировать каждую функцию
-function listContacts() {
-  // ...твой код
+async function listContacts() {
+  try {
+    const data = await fs.readFile(contactsPath, "utf8");
+    const parsedData = JSON.parse(data);
+    console.table(parsedData);
+  } catch (e) {
+    console.error(e);
+  }
 }
-
-function getContactById(contactId) {
-  // ...твой код
-}
-
-function removeContact(contactId) {
-  // ...твой код
-}
-
-function addContact(name, email, phone) {
-  // ...твой код
-}
-
-module.exports = { listContacts, getContactById, removeContact, addContact };
+listContacts();
