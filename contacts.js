@@ -36,6 +36,7 @@ async function removeContact(contactId) {
     );
     await fs.writeFile(contactsPath, JSON.stringify(updatedContacts));
     console.log(`Contact #${contactId} was removed`);
+    console.table(updatedContacts);
   } catch (e) {
     console.error(e);
   }
@@ -56,6 +57,7 @@ async function addContact(name, email, phone) {
     console.log(
       `New contact with name ${name}, email ${email}, phone ${phone} was added`
     );
+    console.table(updatedContacts);
   } catch (e) {
     console.error(e);
   }
