@@ -2,7 +2,7 @@
 
 node index.js --action list
 
-<a href="https://ibb.co/PxrzvkC"><img src="https://i.ibb.co/NxFndRY/list-Contacts.jpg" alt="list-Contacts" ></a>
+<a href="https://ibb.co/PxrzvkC"><img src="https://i.ibb.co/NxFndRY/list-Contacts.jpg" alt="list-Contacts" border="0"></a>
 
 <!-- https://ibb.co/PxrzvkC -->
 
@@ -22,4 +22,4 @@ node index.js --action add --name Mango --email mango@gmail.com --phone 322-22-2
 
 node index.js --action remove --id=3
 
-<a href="https://ibb.co/mNL636r"><img src="https://i.ibb.co/BnXq9qH/remove-Contact.jpg" alt="remove-Contact" border="0"></a>
+<a href="https://ibb.co/mNL636r"><img src="https://i.ibb.co/rdC4V4K/remove-Contact.jpg" alt="remove-Contact" border="0"></a>
